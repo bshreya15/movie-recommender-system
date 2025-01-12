@@ -48,18 +48,30 @@ def recommend(movie):
         recommended_movies.append(movies_list.iloc[i[0]].title)
     return recommended_movies, recommended_movies_posters
 
-
+# load pickle files
 movies_list = pickle.load(open('movies.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
+# web page title
 st.title('Movie Recommender System')
 
+# movie list dropdown
 selected_movie_name = st.selectbox(
     'Select Movie',
     movies_list['title'].values
 )
 
+# onClick recommend button
 if st.button('Recommend'):
-    movies = recommend(selected_movie_name)
-    for movie in movies:
-        st.text(movie)
+
+    # call recommend function for selected movie
+    names, posters = recommend(selected_movie_name)
+
+    # create col using streamlit
+    col1, col2, col3, col4, col5 = st.columns(5, vertical_alignment="top", )
+
+    # Loop through the columns and display the image and name
+    for i, col in enumerate([col1, col2, col3, col4, col5], start=1):
+        with col:
+            st.image(posters[i - 1])  # Display the image
+            st.text(names[i - 1])  # Display the name
