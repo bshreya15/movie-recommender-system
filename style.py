@@ -8,17 +8,14 @@ def set_custom_css():
     <style>
         .stAppHeader{
             display: None;
-        },    
-        .stMainBlockContainer.block-container.st-emotion-cache-yw8pof.ekr3hml4{
-            padding: 0;
-        }     
+        }    
     </style>
     """, unsafe_allow_html=True)
 
     st.markdown("""
         <style>   
             .stMainBlockContainer.block-container.st-emotion-cache-yw8pof.ekr3hml4{
-                padding: 1rem 1rem 1rem 1rem;
+                padding: 1rem;
             }     
         </style>
         """, unsafe_allow_html=True)
