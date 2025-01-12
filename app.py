@@ -57,12 +57,13 @@ def recommend(movie):
 movies_list = pickle.load(open('movies.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
+logo = "./img1.webp"
+
 # web page title
 hcol1, hcol2, hcol3 = st.columns(3)
 
 with hcol1:
-    st.image("./img1.webp", width=85, use_column_width=None,
-             clamp=False, channels="RGB", output_format="auto", use_container_width=False)
+    st.image(logo, width=85, use_column_width=None)
 with hcol2:
     st.title('Showtime!')
 
