@@ -1,7 +1,12 @@
 import streamlit as st
 import pickle
 import requests
+from style import set_custom_css
 from dotenv import dotenv_values
+
+# Apply custom styles
+set_custom_css()
+
 keys = dotenv_values(".env")
 
 # function to fetch posters of similar movies
@@ -53,7 +58,15 @@ movies_list = pickle.load(open('movies.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 # web page title
-st.title('Movie Recommender System')
+hcol1, hcol2, hcol3 = st.columns(3)
+
+with hcol1:
+    st.image("./img1.webp", width=85, use_column_width=None,
+             clamp=False, channels="RGB", output_format="auto", use_container_width=False)
+with hcol2:
+    st.title('Showtime!')
+
+st.markdown("### Find similar movies for your next  binge adventure")
 
 # movie list dropdown
 selected_movie_name = st.selectbox(
