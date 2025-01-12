@@ -1,5 +1,20 @@
 import streamlit as st
 import pickle
+import requests
+from dotenv import dotenv_values
+keys = dotenv_values(".env")
+
+# function to fetch posters of similar movies
+def fetch_poster(movie_id):
+    img_path_prefix = "https://image.tmdb.org/t/p/w500"
+    url = "https://api.themoviedb.org/3/movie/{}?language=en-US".format(movie_id)
+    headers = {
+        "accept": "application/json",
+        "Authorization": "Bearer {}".format(keys["tmdb_api_key"])
+    }
+    resp = requests.get(url , headers=headers)
+    data = resp.json()
+    return img_path_prefix + data['poster_path']
 
 # function to recommend similar movies
 def recommend(movie):
