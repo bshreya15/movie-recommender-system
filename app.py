@@ -54,8 +54,8 @@ def recommend(movie):
     return recommended_movies, recommended_movies_posters
 
 # load pickle files
-movies_list = pickle.load(open('movies.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+movies_list = pickle.load(open('resources/movies.pkl', 'rb'))
+similarity = pickle.load(open('resources/similarity.pkl', 'rb'))
 
 logo = "./img1.webp"
 

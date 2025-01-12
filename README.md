@@ -29,7 +29,7 @@ Welcome to **Showtime!**, a movie recommendation app that helps you discover mov
 
 Here’s a preview of how the app works:
 
-![App Preview](./movie1gif.gif)
+![App Preview](resources/movie1gif.gif)
 
 ## Setup and Installation
 
