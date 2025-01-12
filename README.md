@@ -59,17 +59,4 @@ streamlit run app.py
 - **similarity.pkl**: Pickled matrix of movie similarity scores used for making recommendations.
 - **.env**: Stores your TMDb API key securely.
 
-
-## Explanation of Sections:
-
-1. **Project Overview**: Describes the purpose of the app and its core feature (movie recommendations).
-2. **Features**: Highlights key functionalities of the app like movie selection, recommendations, and fetching posters.
-3. **Technology Stack**: Lists the technologies used to build the app (Streamlit, Pickle, TMDb API, etc.).
-4. **Setup and Installation**: Provides step-by-step instructions for setting up and running the app locally, including installing dependencies and setting the API key.
-5. **App Workflow**: Explains how the app works from the user's perspective.
-6. **Files Description**: Describes the key files and their purpose in the project.
-7. **Screenshots**: A placeholder for any screenshots you might want to include (e.g., the UI of the app).
-8. **Contributing**: Encourages others to contribute to the project.
-9. **License**: States that the project is open-source under the MIT License (you can adjust the license type if necessary).
-
 This `README.md` should help any user understand what your project does, how to set it up, and how it works! You can adjust the details to better fit your project as needed.
