@@ -58,5 +58,3 @@ streamlit run app.py
 - **movies.pkl**: Pickled DataFrame containing movie metadata (like titles and movie IDs).
 - **similarity.pkl**: Pickled matrix of movie similarity scores used for making recommendations.
 - **.env**: Stores your TMDb API key securely.
-
-This `README.md` should help any user understand what your project does, how to set it up, and how it works! You can adjust the details to better fit your project as needed.
