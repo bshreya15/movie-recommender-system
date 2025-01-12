@@ -7,13 +7,18 @@ keys = dotenv_values(".env")
 # function to fetch posters of similar movies
 def fetch_poster(movie_id):
     img_path_prefix = "https://image.tmdb.org/t/p/w500"
+
     url = "https://api.themoviedb.org/3/movie/{}?language=en-US".format(movie_id)
     headers = {
         "accept": "application/json",
         "Authorization": "Bearer {}".format(keys["tmdb_api_key"])
     }
-    resp = requests.get(url , headers=headers)
+
+    # API request for a movie_id
+    resp = requests.get(url , headers = headers)
     data = resp.json()
+
+    # return poster_path from JSON data object
     return img_path_prefix + data['poster_path']
 
 # function to recommend similar movies
@@ -28,9 +33,20 @@ def recommend(movie):
 
     # store titles of top similar movies
     recommended_movies = []
+
+    # store poster_path of top similar movies
+    recommended_movies_posters = []
+
     for i in movies_rec:
+        # find movie_id
+        movie_id = movies_list.iloc[i[0]].movie_id
+
+        # fetch similar movie posters
+        recommended_movies_posters.append(fetch_poster(movie_id))
+
+        # fetch similar movie titles
         recommended_movies.append(movies_list.iloc[i[0]].title)
-    return recommended_movies
+    return recommended_movies, recommended_movies_posters
 
 
 movies_list = pickle.load(open('movies.pkl','rb'))
